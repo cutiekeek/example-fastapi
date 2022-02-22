@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from sqlalchemy import Column, ForeignKey, String, Integer, Boolean, TIMESTAMP, text
 from sqlalchemy.orm import relationship
 from .database import Base
@@ -27,4 +26,3 @@ class Vote(Base):
     __tablename__ = "votes"
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), primary_key=True, nullable=False)
     post_id = Column(Integer, ForeignKey("posts.id", ondelete="CASCADE"), primary_key=True, nullable=False)
-
